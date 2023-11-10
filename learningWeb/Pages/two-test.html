@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Spelling Test</title>
+    <link rel="stylesheet" type="text/css" href="/Assests/css/chat.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+
+        .word-box {
+            margin: 20px;
+        }
+
+        .input-box {
+            width: 200px;
+            height: 30px;
+            border: none;
+            border-bottom: 2px solid #0078D4;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .listen-button, .enter-button {
+            background-color: #0078D4;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .number {
+            display: inline-block;
+            width: 20px;
+            text-align: right;
+            padding-right: 10px;
+        }
+</style>
+</head>
+<body>
+    <header>
+        <h1>Spelling Test</h1>
+    </header>
+
+    <section class="word-box">
+        <span class="number">1.</span>
+        <input type="text" class="input-box" id="wordInput1">
+    </section>
+    <section class="button-container">
+        <button class="listen-button" onclick="saySpellingPrompt('wordInput1', 'on')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput1', 'on')">Enter</button>
+    </section>
+
+    <section class="word-box">
+        <span class="number">2.</span>
+        <input type="text" class="input-box" id="wordInput2">
+    </section>
+    <section class="button-container">
+        <button class= "listen-button" onclick="saySpellingPrompt('wordInput2', 'to')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput2', 'to')">Enter</button>
+    </section>
+
+    <section class="word-box">
+        <span class="number">3.</span>
+        <input type="text" class="input-box" id="wordInput3">
+    </section>
+    <section class="button-container">
+        <button class ="listen-button" onclick="saySpellingPrompt('wordInput3', 'no')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput3', 'no')">Enter</button>
+    </section>
+
+    <section class="word-box">
+        <span class="number">4.</span>
+        <input type="text" class="input-box" id="wordInput4">
+    </section>
+    <section class="button-container">
+        <button class= "listen-button" onclick="saySpellingPrompt('wordInput4', 'so')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput4', 'so')">Enter</button>
+    </section>
+
+    <section class="word-box">
+        <span class="number">5.</span>
+        <input type="text" class="input-box" id="wordInput5">
+    </section>
+    <section class="button-container">
+        <button class ="listen-button" onclick="saySpellingPrompt('wordInput5', 'at')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput5', 'at')">Enter</button>
+    </section>
+
+    <section class="word-box">
+        <span class="number">6.</span>
+        <input type="text" class="input-box" id="wordInput6">
+    </section>
+    <section class="button-container">
+        <button class ="listen-button" onclick="saySpellingPrompt('wordInput6', 'it')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput6', 'it')">Enter</button>
+    </section>
+
+    <section class="word-box">
+        <span class="number">7.</span>
+        <input type="text" class="input-box" id="wordInput7">
+    </section>
+    <section class="button-container">
+        <button class ="listen-button" onclick="saySpellingPrompt('wordInput7', 'he')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput7', 'he')">Enter</button>
+    </section>
+
+    <section class="word-box">
+        <span class="number">8.</span>
+        <input type="text" class="input-box" id="wordInput8">
+    </section>
+    <section class="button-container">
+        <button class ="listen-button" onclick="saySpellingPrompt('wordInput8', 'go')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput8', 'go')">Enter</button>
+    </section>
+
+
+    <section class="word-box">
+        <span class="number">9.</span>
+        <input type="text" class="input-box" id="wordInput9">
+    </section>
+    <section class="button-container">
+        <button class ="listen-button" onclick="saySpellingPrompt('wordInput9', 'is')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput9', 'is')">Enter</button>
+    </section>
+
+
+    <section class="word-box">
+        <span class="number">10.</span>
+        <input type="text" class="input-box" id="wordInput10">
+    </section>
+    <section class="button-container">
+        <button class ="listen-button" onclick="saySpellingPrompt('wordInput10', 'if')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput10', 'if')">Enter</button>
+    </section>
+
+    <section class="word-box">
+        <span class="number">11.</span>
+        <input type="text" class="input-box" id="wordInput11">
+    </section>
+    <section class="button-container">
+        <button class ="listen-button" onclick="saySpellingPrompt('wordInput11', 'up')">Listen</button>
+        <button class="enter-button" onclick="checkSpelling('wordInput11', 'up')">Enter</button>
+    </section>
+
+    <a href="/Pages/index.html">Return Back to Home</a>
+
+    <footer>
+        <p>&copy; 2023 Kids' Spelling Fun. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=flRMvJnD"></script>
+    
+    <script>
+        function saySpellingPrompt(inputId, expectedWord) {
+            responsiveVoice.speak(`You are to spell: ${expectedWord}`);
+        }
+
+        function checkSpelling(inputId, expectedWord) {
+            const inputElement = document.getElementById(inputId);
+            const userWord = inputElement.value.trim().toLowerCase();
+
+            if (userWord === expectedWord) {
+                responsiveVoice.speak("Correct");
+            } else {
+                responsiveVoice.speak("Wrong");
+            }
+        }
+    </script>
+</body>
+</html>
+
+
